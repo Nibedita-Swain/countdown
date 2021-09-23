@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+</head>
+<style>
+
+    .container {
+                position: relative;
+                display:inline;
+                background-color: black;
+                }
+
+    .center>button {
+                margin:50px;
+                position: absolute;
+                top: 60%;
+                background-color: #9fe72b;
+                border: none;
+                color: white;
+                font-weight: 800;
+                padding: 15px 32px;
+                }
+    #mydiv{
+                margin:50px;
+                text-align: center;
+                color: darkorchid;
+                font-weight:bolder;
+                font-size: xx-large;
+            }   
+            
+    #status{
+                text-align: center;
+                font-weight: bolder;
+                color: black;
+                font-size: xx-large;
+                margin:50px;
+            }        
+
+</style>
+<body>
+    <div class="container">
+           <div id="status"></div>
+           <div id="mydiv"></div> 
+            <div class="center">
+             <button  onclick="countdown()">Start Countdown</button>
+            </div>
+   
+    <script>
+        
+    var sec=11;
+   function countdown(){
+    var counter=document.getElementById("status");
+    var text=document.getElementById("mydiv");
+   
+            if(sec>0){
+                sec=sec-1;
+           counter.innerHTML=sec;
+          
+         setTimeout("countdown()",1000);
+       }
+    
+     setTimeout(function(){
+        if (sec == 0)
+        text.innerHTML="HAPPY NEW YEAR :)";
+     },1);
+   }  
+</script>
+</div>
+</body>
+</html>
